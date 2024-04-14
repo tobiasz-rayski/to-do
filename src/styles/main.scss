@@ -1,0 +1,64 @@
+.btn {
+  border: 1px solid black;
+  width: 250px;
+}
+
+.hamburger .line-1 {
+  animation: line-one-down 0.8s ease-out forwards;
+  transform-origin: 50px 25px;
+}
+
+.hamburger .line-2 {
+  animation: line-two-disappear 0.7s steps(1, end) forwards;
+}
+
+.hamburger .line-3 {
+  animation: line-three-up 0.8s ease-out forwards;
+  transform-origin: 50px 75px;
+}
+
+@keyframes line-one-down {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  35% {
+    transform: translateY(25px) rotate(0);
+  }
+
+  100% {
+    transform: translateY(25px) rotate(45deg);
+  }
+}
+
+@keyframes line-two-disappear {
+  0% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  36% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes line-three-up {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+
+  35% {
+    transform: translateY(-25px) rotate(0);
+  }
+
+  100% {
+    transform: translateY(-25px) rotate(-45deg);
+  }
+}
