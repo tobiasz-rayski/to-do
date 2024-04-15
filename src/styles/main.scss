@@ -22,30 +22,30 @@ line {
 }
 
 #btn.open .hamburger .line-1 {
-  animation: line-1-open 0.8s ease-out forwards;
+  animation: line-1-open 0.5s ease-out forwards;
   transform-origin: 50px 25px;
 }
 
 #btn.open .hamburger .line-2 {
-  animation: line-2-open 0.7s steps(1, end) forwards;
+  animation: line-2-open 0.5s steps(1, end) forwards;
 }
 
 #btn.open .hamburger .line-3 {
-  animation: line-3-open 0.8s ease-out forwards;
+  animation: line-3-open 0.5s ease-out forwards;
   transform-origin: 50px 75px;
 }
 
 #btn.close .hamburger .line-1 {
-  animation: line-1-close 0.8s ease-out forwards;
+  animation: line-1-close 0.5s ease-out forwards;
   transform-origin: 50px 25px;
 }
 
 #btn.close .hamburger .line-2 {
-  animation: line-2-close 0.7s steps(1, end) forwards;
+  animation: line-2-close 0.5s steps(1, end) forwards;
 }
 
 #btn.close .hamburger .line-3 {
-  animation: line-3-close 0.8s ease-out forwards;
+  animation: line-3-close 0.5s ease-out forwards;
   transform-origin: 50px 75px;
 }
 
