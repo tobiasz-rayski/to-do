@@ -1,23 +1,55 @@
-.btn {
-  border: 1px solid black;
-  width: 250px;
+* {
+  // box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.hamburger .line-1 {
-  animation: line-one-down 0.8s ease-out forwards;
+body {
+  padding: 10px;
+}
+
+button {
+  border: none;
+  background: none;
+}
+
+#btn {
+  width: 36px;
+}
+
+line {
+  stroke-width: 12px;
+}
+
+#btn.open .hamburger .line-1 {
+  animation: line-1-open 0.8s ease-out forwards;
   transform-origin: 50px 25px;
 }
 
-.hamburger .line-2 {
-  animation: line-two-disappear 0.7s steps(1, end) forwards;
+#btn.open .hamburger .line-2 {
+  animation: line-2-open 0.7s steps(1, end) forwards;
 }
 
-.hamburger .line-3 {
-  animation: line-three-up 0.8s ease-out forwards;
+#btn.open .hamburger .line-3 {
+  animation: line-3-open 0.8s ease-out forwards;
   transform-origin: 50px 75px;
 }
 
-@keyframes line-one-down {
+#btn.close .hamburger .line-1 {
+  animation: line-1-close 0.8s ease-out forwards;
+  transform-origin: 50px 25px;
+}
+
+#btn.close .hamburger .line-2 {
+  animation: line-2-close 0.7s steps(1, end) forwards;
+}
+
+#btn.close .hamburger .line-3 {
+  animation: line-3-close 0.8s ease-out forwards;
+  transform-origin: 50px 75px;
+}
+
+@keyframes line-1-open {
   0% {
     transform: translateY(0) rotate(0);
   }
@@ -31,7 +63,7 @@
   }
 }
 
-@keyframes line-two-disappear {
+@keyframes line-2-open {
   0% {
     opacity: 1;
   }
@@ -49,7 +81,7 @@
   }
 }
 
-@keyframes line-three-up {
+@keyframes line-3-open {
   0% {
     transform: translateY(0) rotate(0);
   }
@@ -60,5 +92,51 @@
 
   100% {
     transform: translateY(-25px) rotate(-45deg);
+  }
+}
+
+@keyframes line-1-close {
+  0% {
+    transform: translateY(25px) rotate(45deg);
+  }
+
+  35% {
+    transform: translateY(25px) rotate(0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@keyframes line-2-close {
+  0% {
+    opacity: 0;
+  }
+
+  35% {
+    opacity: 0;
+  }
+
+  36% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes line-3-close {
+  0% {
+    transform: translateY(-25px) rotate(-45deg);
+  }
+
+  35% {
+    transform: translateY(-25px) rotate(0);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0);
   }
 }
