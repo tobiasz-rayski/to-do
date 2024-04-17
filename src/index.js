@@ -1,15 +1,14 @@
 import "../src/styles/main.scss";
+import HamburgerIcon from "./components/HamburgerIcon";
+import NavbarModel from "./models/NavbarModel";
+import NavbarView from "./views/NavbarView";
+import NavbarController from "./controllers/NavbarController";
 
-const btn = document.getElementById("btn");
+const root = document.getElementById("root");
 
-btn.addEventListener("click", (e) => {
-  if (btn.classList.contains("open")) {
-    btn.classList.remove("open");
-    btn.classList.add("close");
-  } else if (btn.classList.contains("close")) {
-    btn.classList.remove("close");
-    btn.classList.add("open");
-  } else {
-    btn.classList.add("open");
-  }
-});
+const hamburgerIcon = new HamburgerIcon();
+
+const navbarModel = new NavbarModel();
+const navbarView = new NavbarView(hamburgerIcon);
+const navbarController = new NavbarController(navbarModel, navbarView);
+root.appendChild(navbarView.render());
