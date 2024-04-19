@@ -4,7 +4,6 @@ export default class menuController {
     this.menuView = menuView;
     this.menuView.hamburgerIcon.onClick(() => this.handleHamburgerOnClick());
     this.docRoot = docRoot;
-    this.init();
   }
 
   init() {

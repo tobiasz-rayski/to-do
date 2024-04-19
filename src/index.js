@@ -8,3 +8,5 @@ const docRoot = document.getElementById("root");
 const menuModel = new MenuModel();
 const menuView = new MenuView();
 const menuController = new MenuController(docRoot, menuModel, menuView);
+
+menuController.init();
