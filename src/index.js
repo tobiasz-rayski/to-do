@@ -1,14 +1,12 @@
 import "../src/styles/main.scss";
-import HamburgerIcon from "./components/HamburgerIcon";
-import NavbarModel from "./models/NavbarModel";
-import NavbarView from "./views/NavbarView";
-import NavbarController from "./controllers/NavbarController";
+import MenuModel from "./models/MenuModel";
+import MenuView from "./views/MenuView";
+import MenuController from "./controllers/MenuController";
 
 const root = document.getElementById("root");
+const menuModel = new MenuModel();
+const menuView = new MenuView();
+const menuController = new MenuController(menuModel, menuView);
 
-const hamburgerIcon = new HamburgerIcon();
-
-const navbarModel = new NavbarModel();
-const navbarView = new NavbarView(hamburgerIcon);
-const navbarController = new NavbarController(navbarModel, navbarView);
-root.appendChild(navbarView.render());
+root.appendChild(menuView.render());
+root.appendChild(footerView.render());

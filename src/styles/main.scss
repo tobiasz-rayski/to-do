@@ -1,6 +1,14 @@
 @import "hamburger";
 @import "reset";
+@import "variables";
 
-body {
-  padding: 10px;
+#root {
+  display: grid;
+  grid-template-rows: 45px 1fr 45px;
+
+  nav {
+    display: flex;
+    padding: 6px;
+    background: $gradient-01;
+  }
 }

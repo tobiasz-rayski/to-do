@@ -13,7 +13,7 @@ export default class HamburgerIcon {
             x2="85"
             y1="25"
             y2="25"
-            stroke-width="9"
+            stroke-width="7"
             stroke-linecap="round"
             class="line-1"
           ></line>
@@ -22,7 +22,7 @@ export default class HamburgerIcon {
             x2="85"
             y1="50"
             y2="50"
-            stroke-width="9"
+            stroke-width="7"
             stroke-linecap="round"
             class="line-2"
           ></line>
@@ -31,7 +31,7 @@ export default class HamburgerIcon {
             x2="85"
             y1="75"
             y2="75"
-            stroke-width="9"
+            stroke-width="7"
             stroke-linecap="round"
             class="line-3"
           ></line>
