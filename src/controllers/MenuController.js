@@ -1,9 +1,14 @@
 export default class menuController {
-  constructor(menuModel, menuView) {
+  constructor(docRoot, menuModel, menuView) {
     this.menuModel = menuModel;
     this.menuView = menuView;
     this.menuView.hamburgerIcon.onClick(() => this.handleHamburgerOnClick());
-    this.isMenuOpen = this.menuModel.menu.isOpen;
+    this.docRoot = docRoot;
+    this.init();
+  }
+
+  init() {
+    this.docRoot.appendChild(this.menuView.render());
   }
 
   toggleMenuState() {
@@ -12,11 +17,8 @@ export default class menuController {
 
   handleHamburgerOnClick() {
     this.toggleMenuState();
-
-    if (this.menuModel.menu.isOpen) {
-      this.menuView.hamburgerIcon.animateOpen();
-    } else if (!this.isMenuOpen) {
-      this.menuView.hamburgerIcon.animateClose();
-    }
+    this.menuModel.menu.isOpen
+      ? this.menuView.hamburgerIcon.animateOpen()
+      : this.menuView.hamburgerIcon.animateClose();
   }
 }
