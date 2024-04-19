@@ -9,8 +9,16 @@
 
   nav {
     display: flex;
+    position: relative;
+    z-index: 3;
     padding: 6px;
     background: $gradient-01;
-    box-shadow: $shadow-03;
+    box-shadow: $shadow-04;
+  }
+
+  main {
+    position: relative;
+    z-index: 2;
+    background-color: $grey-95;
   }
 }

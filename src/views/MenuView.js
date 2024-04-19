@@ -1,14 +1,14 @@
 import HamburgerIcon from "../components/HamburgerIcon";
 
-export default class mainMenuView {
+export default class MenuView {
   constructor() {
     this.hamburgerIcon = new HamburgerIcon();
-    this.mainMenu = document.createElement("nav");
-    this.mainMenu.id = "mainMenu";
+    this.menu = document.createElement("nav");
+    this.menu.id = "menu";
   }
 
   render() {
-    this.mainMenu.appendChild(this.hamburgerIcon.render());
-    return this.mainMenu;
+    this.menu.appendChild(this.hamburgerIcon.render());
+    return this.menu;
   }
 }
