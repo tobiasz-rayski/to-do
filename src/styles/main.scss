@@ -12,8 +12,15 @@
     position: relative;
     z-index: 3;
     padding: 6px;
-    background: $gradient-01;
     box-shadow: $shadow-04;
+  }
+
+  nav#menu {
+    background: $gradient-01;
+  }
+
+  nav#footer {
+    background-color: $white;
   }
 
   main {

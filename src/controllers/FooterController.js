@@ -1,11 +1,11 @@
 export default class FooterController {
-  constructor(docRoot, footerView, footerModel) {
+  constructor(docRoot, footerModel, footerView) {
     this.docRoot = docRoot;
-    this.footerView = footerView;
     this.footerModel = footerModel;
+    this.footerView = footerView;
   }
 
   init() {
-    docRoot.appendChild(this.footerView.render());
+    this.docRoot.appendChild(this.footerView.render());
   }
 }
