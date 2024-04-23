@@ -2,7 +2,7 @@
 @import "reset";
 @import "variables";
 
-#root {
+#docRoot {
   display: grid;
   grid-template-rows: 45px 1fr 45px;
   height: 100vh;

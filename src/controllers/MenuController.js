@@ -1,13 +1,8 @@
-export default class menuController {
-  constructor(docRoot, menuModel, menuView) {
+export default class MenuController {
+  constructor(menuModel, menuView) {
     this.menuModel = menuModel;
     this.menuView = menuView;
     this.menuView.hamburgerIcon.onClick(() => this.handleHamburgerOnClick());
-    this.docRoot = docRoot;
-  }
-
-  init() {
-    this.docRoot.appendChild(this.menuView.render());
   }
 
   toggleMenuState() {

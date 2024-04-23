@@ -1,28 +1,26 @@
 import "../src/styles/main.scss";
-import MenuModel from "./models/MenuModel";
-import TaskModel from "./models/TaskModel";
-import FooterModel from "./models/FooterModel";
-import MenuView from "./views/MenuView";
-import TaskView from "./views/TaskView";
-import FooterView from "./views/FooterView";
-import MenuController from "./controllers/MenuController";
-import TaskController from "./controllers/TaskControlller";
-import FooterController from "./controllers/FooterController";
 
-const docRoot = document.getElementById("root");
+import MenuModel from "./models/MenuModel";
+
+import AppView from "./views/AppView";
+import MenuView from "./views/MenuView";
+import ProjectView from "./views/ProjectView";
+import FooterView from "./views/FooterView";
+
+import AppController from "./controllers/AppController";
+import MenuController from "./controllers/MenuController";
 
 const menuModel = new MenuModel();
-const taskModel = new TaskModel();
-const footerModel = new FooterModel();
 
+const appView = new AppView();
 const menuView = new MenuView();
-const taskView = new TaskView();
+const projectView = new ProjectView();
 const footerView = new FooterView();
 
-const menuController = new MenuController(docRoot, menuModel, menuView);
-const taskController = new TaskController(docRoot, taskModel, taskView);
-const footerController = new FooterController(docRoot, footerModel, footerView);
-
-menuController.init();
-taskController.init();
-footerController.init();
+const appController = new AppController(
+  appView,
+  menuView,
+  projectView,
+  footerView,
+);
+const menuController = new MenuController(menuModel, menuView);

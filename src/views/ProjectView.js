@@ -1,4 +1,4 @@
-export default class TaskView {
+export default class ProjectView {
   constructor() {
     this.main = document.createElement("main");
   }
