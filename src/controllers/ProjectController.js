@@ -5,6 +5,10 @@ export default class ProjectController {
   }
 
   getProjectId() {
-    this.projectModel.getId();
+    return this.projectModel.getId();
+  }
+
+  getProjectName() {
+    return this.projectModel.getName();
   }
 }
