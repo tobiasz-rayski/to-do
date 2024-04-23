@@ -26,6 +26,7 @@ const appController = new AppController(
   projectView,
   footerView,
 );
+
 const menuController = new MenuController(menuModel, menuView, appModel);
 
 console.log(appModel);

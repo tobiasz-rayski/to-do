@@ -1,9 +1,11 @@
 @import "hamburger";
 @import "reset";
 @import "variables";
+@import "fonts";
 
 #docRoot {
   font-family: Inter;
+  font-size: 0.75rem;
   display: grid;
   grid-template-rows: 45px 1fr 45px;
   height: 100vh;
