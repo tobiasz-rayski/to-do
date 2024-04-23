@@ -13,8 +13,7 @@ import AppController from "./controllers/AppController";
 import MenuController from "./controllers/MenuController";
 
 const menuModel = new MenuModel();
-const projectModel = new ProjectModel();
-const appModel = new AppModel(projectModel);
+const appModel = new AppModel();
 
 const appView = new AppView();
 const menuView = new MenuView();
@@ -27,7 +26,6 @@ const appController = new AppController(
   projectView,
   footerView,
 );
-const menuController = new MenuController(menuModel, menuView);
+const menuController = new MenuController(menuModel, menuView, appModel);
 
-appModel.createNewProject();
 console.log(appModel);

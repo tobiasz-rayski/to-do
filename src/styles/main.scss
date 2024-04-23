@@ -3,16 +3,20 @@
 @import "variables";
 
 #docRoot {
+  font-family: Inter;
   display: grid;
   grid-template-rows: 45px 1fr 45px;
   height: 100vh;
 
   nav {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: relative;
     z-index: 3;
     padding: 6px;
     box-shadow: $shadow-04;
+    height: 100%;
   }
 
   nav#menu {
