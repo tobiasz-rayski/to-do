@@ -3,4 +3,8 @@ export default class ProjectController {
     this.projectModel = projectModel;
     this.projectView = projectView;
   }
+
+  getProjectId() {
+    this.projectModel.getId();
+  }
 }

@@ -1,6 +1,8 @@
 import "../src/styles/main.scss";
 
+import AppModel from "./models/AppModel";
 import MenuModel from "./models/MenuModel";
+import ProjectModel from "./models/ProjectModel";
 
 import AppView from "./views/AppView";
 import MenuView from "./views/MenuView";
@@ -11,6 +13,8 @@ import AppController from "./controllers/AppController";
 import MenuController from "./controllers/MenuController";
 
 const menuModel = new MenuModel();
+const projectModel = new ProjectModel();
+const appModel = new AppModel(projectModel);
 
 const appView = new AppView();
 const menuView = new MenuView();
@@ -24,3 +28,6 @@ const appController = new AppController(
   footerView,
 );
 const menuController = new MenuController(menuModel, menuView);
+
+appModel.createNewProject();
+console.log(appModel);
