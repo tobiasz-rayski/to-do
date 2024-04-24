@@ -1,3 +1,5 @@
+import debounce from "../utils/debounce";
+
 export default class ButtonIcon {
   constructor() {
     this.button = document.createElement("button");
@@ -9,6 +11,6 @@ export default class ButtonIcon {
   }
 
   onClick(handler) {
-    this.button.addEventListener("click", handler);
+    this.button.addEventListener("click", debounce(handler, 50));
   }
 }

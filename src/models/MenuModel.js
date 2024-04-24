@@ -1,7 +1,11 @@
 export default class MenuModel {
   constructor() {
     this.menu = {
-      isOpen: false,
+      isActive: false,
     };
+  }
+
+  toggleMenuState() {
+    this.menu.isActive = !this.menu.isActive;
   }
 }

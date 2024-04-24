@@ -11,13 +11,9 @@ export default class MenuController {
     this.updateActiveProject();
   }
 
-  toggleMenuState() {
-    this.menuModel.menu.isOpen = !this.menuModel.menu.isOpen;
-  }
-
   handleHamburgerOnClick() {
-    this.toggleMenuState();
-    this.menuModel.menu.isOpen
+    this.menuModel.toggleMenuState();
+    this.menuModel.menu.isActive
       ? this.menuView.hamburgerIcon.animateOpen()
       : this.menuView.hamburgerIcon.animateClose();
   }

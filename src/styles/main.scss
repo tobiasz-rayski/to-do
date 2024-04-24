@@ -3,11 +3,14 @@
 @import "variables";
 @import "fonts";
 
+body {
+  overflow: hidden;
+}
+
 #docRoot {
   font-family: Inter;
-  font-size: 0.75rem;
   display: grid;
-  grid-template-rows: 45px 1fr 45px;
+  grid-template-rows: 45px 1fr $footer-height;
   height: 100vh;
 
   nav {
@@ -16,13 +19,21 @@
     justify-content: space-between;
     position: relative;
     z-index: 3;
-    padding: 6px;
+    padding: 16px;
     box-shadow: $shadow-04;
     height: 100%;
+
+    button {
+      cursor: pointer;
+    }
   }
 
   nav#menu {
     background: $gradient-01;
+
+    h2 {
+      font-size: 1.25rem;
+    }
   }
 
   nav#footer {
@@ -37,19 +48,53 @@
     background-color: $grey-95;
   }
 
-  // .modal {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: center;
-  //   position: absolute;
-  //   z-index: 10;
-  //   background-color: $grey-25;
-  //   height: 100vh;
-  //   opacity: 0.8;
-  //   width: 100vh;
-  // }
+  section.modal {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    bottom: $footer-height;
+    box-shadow: $shadow-01;
+    background-color: $white;
 
-  hidden {
+    ul {
+      li {
+        font-size: 1.1rem;
+        font-weight: 500;
+        height: 48px;
+        background-color: $white;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+      }
+    }
+  }
+
+  .button-close {
+    position: absolute;
+    top: 4px;
+    right: 6px;
+  }
+
+  .hidden {
     opacity: 0;
+    transform: translateY(100%);
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out,
+      visibility 0s ease-in-out 0.3s;
+  }
+
+  .visible {
+    opacity: 1;
+    transform: translateY(0px);
+    visibility: visible;
+    transition:
+      opacity 0.3s ease-in-out,
+      transform 0.3s ease-in-out,
+      visibility 0s ease-in-out;
   }
 }

@@ -1,5 +1,6 @@
 export default class AppController {
-  constructor(appView, menuView, projectView, footerView) {
+  constructor(appModel, appView, menuView, projectView, footerView) {
+    this.appModel = appModel;
     this.appView = appView;
     this.menuView = menuView;
     this.projectView = projectView;
@@ -9,8 +10,9 @@ export default class AppController {
 
   init() {
     this.appView.appendRoot();
-    this.appView.appendMenuView(this.menuView.render());
-    this.appView.appendProjectView(this.projectView.render());
-    this.appView.appendFooterView(this.footerView.render());
+    this.appView.append(this.menuView.render());
+    this.appView.append(this.projectView.render());
+    this.appView.append(this.footerView.render());
+    this.appView.append(this.appView.modal.render(this.appModel.getProjects()));
   }
 }

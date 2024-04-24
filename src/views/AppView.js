@@ -1,28 +1,17 @@
+import AddProjectModal from "../components/AddProjectModal";
+
 export default class AppView {
   constructor() {
     this.docRoot = document.createElement("div");
     this.docRoot.id = "docRoot";
-    this.modal = document.createElement("div");
-    this.modal.id = "modal";
+    this.modal = new AddProjectModal();
   }
 
   appendRoot() {
     document.body.appendChild(this.docRoot);
   }
 
-  appendMenuView(element) {
+  append(element) {
     this.docRoot.appendChild(element);
-  }
-
-  appendProjectView(element) {
-    this.docRoot.appendChild(element);
-  }
-
-  appendFooterView(element) {
-    this.docRoot.appendChild(element);
-  }
-
-  displayAddProjectModal() {
-    this.docRoot.appendChild(this.modal);
   }
 }

@@ -35,4 +35,8 @@ export default class AppModel {
       this.activeProject = project;
     }
   }
+
+  getProjects() {
+    return this.projects;
+  }
 }
