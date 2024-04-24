@@ -1,6 +1,8 @@
-export default class HamburgerIcon {
+import ButtonIcon from "./ButtonIcon";
+
+export default class HamburgerIcon extends ButtonIcon {
   constructor() {
-    this.button = document.createElement("button");
+    super();
     this.button.id = "hamburgerIcon";
     this.button.innerHTML = `
         <svg
@@ -37,14 +39,6 @@ export default class HamburgerIcon {
           ></line>
         </svg>
       `;
-  }
-
-  render() {
-    return this.button;
-  }
-
-  onClick(handler) {
-    this.button.addEventListener("click", handler);
   }
 
   animateOpen() {

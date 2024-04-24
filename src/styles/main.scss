@@ -27,11 +27,29 @@
 
   nav#footer {
     background-color: $white;
+    justify-content: start;
+    gap: 1rem;
   }
 
   main {
     position: relative;
     z-index: 2;
     background-color: $grey-95;
+  }
+
+  // .modal {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: center;
+  //   position: absolute;
+  //   z-index: 10;
+  //   background-color: $grey-25;
+  //   height: 100vh;
+  //   opacity: 0.8;
+  //   width: 100vh;
+  // }
+
+  hidden {
+    opacity: 0;
   }
 }

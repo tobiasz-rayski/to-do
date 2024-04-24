@@ -29,4 +29,7 @@ const appController = new AppController(
 
 const menuController = new MenuController(menuModel, menuView, appModel);
 
-console.log(appModel);
+const docRoot = document.getElementById("docRoot");
+const modal = document.createElement("div");
+modal.id = "modal";
+docRoot.prepend(modal);

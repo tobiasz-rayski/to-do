@@ -13,6 +13,4 @@ export default class AppController {
     this.appView.appendProjectView(this.projectView.render());
     this.appView.appendFooterView(this.footerView.render());
   }
-
-  createNewProject() {}
 }
