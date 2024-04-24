@@ -13,4 +13,14 @@ export default class Modal {
   toggleState() {
     this.isActive = !this.isActive;
   }
+
+  show() {
+    this.modal.classList.remove("hidden", "visible");
+    this.modal.classList.add("visible");
+  }
+
+  hide() {
+    this.modal.classList.remove("hidden", "visible");
+    this.modal.classList.add("hidden");
+  }
 }

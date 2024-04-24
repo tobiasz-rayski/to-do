@@ -1,10 +1,12 @@
 import AddProjectModal from "../components/AddProjectModal";
+import ListProjectsModal from "../components/ListProjectsModal";
 
 export default class AppView {
   constructor() {
     this.docRoot = document.createElement("div");
     this.docRoot.id = "docRoot";
-    this.modal = new AddProjectModal();
+    this.listProjectsModal = new ListProjectsModal();
+    this.addProjectModal = new AddProjectModal();
   }
 
   appendRoot() {

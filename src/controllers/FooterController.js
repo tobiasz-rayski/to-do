@@ -1,5 +1,3 @@
-import debounce from "../utils/debounce";
-
 export default class FooterController {
   constructor(footerModel, footerView, appModel, appView) {
     this.footerModel = footerModel;
@@ -9,14 +7,26 @@ export default class FooterController {
     this.footerView.listProjectsIcon.onClick((e) =>
       this.handleListProjectsOnClick(e),
     );
+    this.footerView.addProjectIcon.onClick((e) =>
+      this.handleAddProjectOnClick(e),
+    );
   }
 
   handleListProjectsOnClick(e) {
     e.stopPropagation();
-    console.log(e.bubbles);
-    this.appView.modal.toggleState();
-    this.appView.modal.isActive
-      ? this.appView.modal.show()
-      : this.appView.modal.hide();
+    this.appView.listProjectsModal.toggleState();
+    this.appView.listProjectsModal.isActive
+      ? this.appView.listProjectsModal.show()
+      : this.appView.listProjectsModal.hide();
+  }
+
+  handleAddProjectOnClick(e) {
+    e.stopPropagation();
+    const modal = this.appView.addProjectModal;
+    modal.toggleState();
+    if (modal.isActive) {
+      modal.show();
+      modal.input.focus();
+    } else modal.hide();
   }
 }
