@@ -5,8 +5,15 @@ export default class ListProjectsModal extends Modal {
     super();
   }
 
+  clear() {
+    while (this.modal.firstChild) {
+      this.modal.removeChild(this.modal.firstChild);
+    }
+  }
+
   appendProjectsList(projects) {
     this.ul = document.createElement("ul");
+
     this.modal.appendChild(this.ul);
     projects.forEach((p) => {
       const li = document.createElement("li");

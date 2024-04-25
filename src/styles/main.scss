@@ -80,6 +80,8 @@ body {
         display: flex;
         align-items: center;
         padding: 1rem;
+        border: solid 1px $grey-95;
+        cursor: pointer;
       }
     }
   }

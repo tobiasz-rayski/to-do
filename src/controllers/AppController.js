@@ -50,9 +50,12 @@ export default class AppController {
   handleAddProjectOnEnter(e) {
     if (e.key === "Enter" || e.keyCode === 13) {
       e.preventDefault();
-
-      console.log("You eneter: ", e.target.value);
+      this.appModel.addNewProject(e.target.value);
       e.target.value = "";
+      const projects = this.appModel.getProjects();
+      this.appView.listProjectsModal.clear();
+      this.appView.listProjectsModal.render(projects);
+      console.log(this.appModel.getProjects());
     }
   }
 }
