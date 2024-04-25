@@ -8,17 +8,9 @@ export default class AddProjectModal extends Modal {
     this.input.id = "addNewProjectInput";
   }
 
-  appendCloseButton() {
-    this.modal.appendChild(this.button);
-  }
-
-  appendInput() {
-    this.modal.appendChild(this.input);
-  }
-
   render() {
-    this.appendInput();
-    this.appendCloseButton();
+    this.modal.appendChild(this.input);
+    this.modal.appendChild(this.button);
     return this.modal;
   }
 }
