@@ -30,6 +30,9 @@ body {
 
   nav#menu {
     background: $gradient-01;
+    button#hamburgerIcon {
+      margin-left: -2px;
+    }
 
     h2 {
       font-size: 1.25rem;
