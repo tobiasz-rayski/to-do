@@ -7,6 +7,7 @@ export default class AppView {
     this.docRoot.id = "docRoot";
     this.listProjectsModal = new ListProjectsModal();
     this.addProjectModal = new AddProjectModal();
+    this.modals = this.getModals();
   }
 
   appendRoot() {
@@ -15,5 +16,24 @@ export default class AppView {
 
   append(element) {
     this.docRoot.appendChild(element);
+  }
+
+  documentOnClick(handler) {
+    document.addEventListener("click", handler);
+  }
+
+  getModalsDOM() {
+    return document.querySelectorAll(".modal");
+  }
+
+  getModals() {
+    return [this.listProjectsModal, this.addProjectModal];
+  }
+
+  hideModals() {
+    this.modals.forEach((modal) => {
+      modal.setInactive();
+      modal.hide();
+    });
   }
 }

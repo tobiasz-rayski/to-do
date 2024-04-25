@@ -11,6 +11,6 @@ export default class ButtonIcon {
   }
 
   onClick(handler) {
-    this.button.addEventListener("click", debounce(handler, 50));
+    this.button.addEventListener("click", debounce(handler, 10));
   }
 }

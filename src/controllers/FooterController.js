@@ -4,6 +4,10 @@ export default class FooterController {
     this.footerView = footerView;
     this.appModel = appModel;
     this.appView = appView;
+    this.init();
+  }
+
+  init() {
     this.footerView.listProjectsIcon.onClick((e) =>
       this.handleListProjectsOnClick(e),
     );
@@ -13,20 +17,29 @@ export default class FooterController {
   }
 
   handleListProjectsOnClick(e) {
-    e.stopPropagation();
-    this.appView.listProjectsModal.toggleState();
-    this.appView.listProjectsModal.isActive
-      ? this.appView.listProjectsModal.show()
-      : this.appView.listProjectsModal.hide();
+    const modal = this.appView.listProjectsModal;
+
+    if (modal.isActive) {
+      modal.toggleState();
+      modal.update();
+    } else {
+      this.appView.hideModals();
+      modal.toggleState();
+      modal.update();
+    }
   }
 
   handleAddProjectOnClick(e) {
-    e.stopPropagation();
     const modal = this.appView.addProjectModal;
-    modal.toggleState();
+
     if (modal.isActive) {
-      modal.show();
+      modal.toggleState();
+      modal.update();
+    } else {
+      this.appView.hideModals();
+      modal.toggleState();
+      modal.update();
       modal.input.focus();
-    } else modal.hide();
+    }
   }
 }

@@ -5,6 +5,7 @@ export default class AddProjectModal extends Modal {
     super();
     this.input = document.createElement("input");
     this.input.type = "text";
+    this.input.placeholder = "Create New Project";
     this.input.id = "addNewProjectInput";
   }
 
@@ -12,5 +13,9 @@ export default class AddProjectModal extends Modal {
     this.modal.appendChild(this.input);
     this.modal.appendChild(this.button);
     return this.modal;
+  }
+
+  onEnter(handler) {
+    this.input.addEventListener("keydown", handler);
   }
 }

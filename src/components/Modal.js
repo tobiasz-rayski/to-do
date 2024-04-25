@@ -14,6 +14,12 @@ export default class Modal {
     this.isActive = !this.isActive;
   }
 
+  update() {
+    if (this.isActive) {
+      this.show();
+    } else this.hide();
+  }
+
   show() {
     this.modal.classList.remove("hidden", "visible");
     this.modal.classList.add("visible");
@@ -22,5 +28,11 @@ export default class Modal {
   hide() {
     this.modal.classList.remove("hidden", "visible");
     this.modal.classList.add("hidden");
+  }
+
+  setInactive() {
+    if (this.isActive === true) {
+      this.isActive = !this.isActive;
+    }
   }
 }
