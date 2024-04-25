@@ -13,12 +13,12 @@ export default class ListProjectsModal extends Modal {
 
   appendProjectsList(projects) {
     this.ul = document.createElement("ul");
-
     this.modal.appendChild(this.ul);
     projects.forEach((p) => {
       const li = document.createElement("li");
       li.dataset.id = p.id;
       li.textContent = p.name;
+      li.classList.add("project");
       this.ul.appendChild(li);
     });
   }

@@ -1,10 +1,18 @@
 export default class AppController {
-  constructor(appModel, appView, menuView, projectView, footerView) {
+  constructor(
+    appModel,
+    appView,
+    menuView,
+    projectView,
+    footerView,
+    menuController,
+  ) {
     this.appModel = appModel;
     this.appView = appView;
     this.menuView = menuView;
     this.projectView = projectView;
     this.footerView = footerView;
+    this.menuController = menuController;
     this.init();
   }
 
@@ -20,6 +28,9 @@ export default class AppController {
     this.appView.documentOnClick((e) => this.handleDocumentOnClick(e));
     this.appView.addProjectModal.onEnter((e) =>
       this.handleAddProjectOnEnter(e),
+    );
+    this.appView.listProjectsModal.onClick((e) =>
+      this.handleListItemOnClick(e),
     );
   }
 
@@ -55,7 +66,15 @@ export default class AppController {
       const projects = this.appModel.getProjects();
       this.appView.listProjectsModal.clear();
       this.appView.listProjectsModal.render(projects);
-      console.log(this.appModel.getProjects());
+      this.appView.hideModals();
+    }
+  }
+
+  handleListItemOnClick(e) {
+    if (e.target.dataset.id) {
+      this.appModel.setActiveProject(e.target.dataset.id);
+      this.menuController.updateActiveProject();
+      this.appView.hideModals();
     }
   }
 }

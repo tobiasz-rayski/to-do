@@ -23,15 +23,16 @@ const menuView = new MenuView();
 const projectView = new ProjectView();
 const footerView = new FooterView();
 
+const menuController = new MenuController(menuModel, menuView, appModel);
+
 const appController = new AppController(
   appModel,
   appView,
   menuView,
   projectView,
   footerView,
+  menuController,
 );
-
-const menuController = new MenuController(menuModel, menuView, appModel);
 
 const footerController = new FooterController(
   footerModel,

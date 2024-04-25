@@ -35,4 +35,8 @@ export default class Modal {
       this.isActive = !this.isActive;
     }
   }
+
+  onClick(handler) {
+    this.modal.addEventListener("click", handler);
+  }
 }
