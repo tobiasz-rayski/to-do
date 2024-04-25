@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
-export default class Task {
+export default class TaskModel {
   constructor(name, priority = 0) {
     this.setId();
     this.setName(name);
@@ -32,11 +32,12 @@ export default class Task {
   }
 
   setPriority(priority) {
-    if (priority >= 0 && priority < 4) {
-      this.priority = priority;
-    } else {
-      console.error("Priority must be a number between 0 and 3.");
+    const levels = ["None", "Low", "Medium", "High"];
+    if (!levels.includes(priority)) {
+      console.error("Priority must be one of: None, Low, Medium or High.");
       return;
+    } else {
+      this.priority = priority;
     }
   }
 
