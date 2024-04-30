@@ -35,7 +35,9 @@ export default class AddView extends Modal {
     this.addTask.appendChild(this.taskPriority);
 
     this.modal.appendChild(this.addTask);
-    // this.modal.classList.remove("hidden");
-    // this.modal.classList.add("visible");
+  }
+
+  onSubmit(handler) {
+    this.addTask.addEventListener("submit", handler);
   }
 }

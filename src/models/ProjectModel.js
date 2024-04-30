@@ -31,9 +31,9 @@ export default class ProjectModel {
     return this.name;
   }
 
-  addNewTask(task) {
-    const newTask = new TaskModel();
-    this.tasks.push(task);
+  addNewTask(name, priority) {
+    const newTask = new TaskModel(name, priority);
+    this.tasks.push(newTask);
     return newTask;
   }
 }

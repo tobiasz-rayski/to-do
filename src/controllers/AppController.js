@@ -33,6 +33,7 @@ export default class AppController {
     this.appView.listProjectsModal.onClick((e) =>
       this.handleListItemOnClick(e),
     );
+    this.appView.addTaskModal.onSubmit((e) => this.handleAddNewTaskOnSubmit(e));
   }
 
   handleDocumentOnClick(e) {
@@ -77,5 +78,14 @@ export default class AppController {
       this.menuController.updateActiveProject();
       this.appView.hideModals();
     }
+  }
+
+  handleAddNewTaskOnSubmit(e) {
+    e.preventDefault();
+    const activeProject = this.appModel.getActiveProject();
+    const taskNameValue = this.appView.addTaskModal.taskName.value;
+    const taskPriorityValue = this.appView.addTaskModal.taskPriority.value;
+    const newTask = activeProject.addNewTask(taskNameValue, taskPriorityValue);
+    this.appView.hideModals();
   }
 }
