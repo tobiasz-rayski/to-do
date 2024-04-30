@@ -25,6 +25,7 @@ export default class AppController {
     const projects = this.appModel.getProjects();
     this.appView.append(this.appView.listProjectsModal.render(projects));
     this.appView.append(this.appView.addProjectModal.render());
+    this.appView.append(this.appView.addTaskModal.render());
     this.appView.documentOnClick((e) => this.handleDocumentOnClick(e));
     this.appView.addProjectModal.onEnter((e) =>
       this.handleAddProjectOnEnter(e),

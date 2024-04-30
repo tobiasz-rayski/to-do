@@ -32,9 +32,8 @@ export default class TaskModel {
   }
 
   setPriority(priority) {
-    const levels = ["None", "Low", "Medium", "High"];
-    if (!levels.includes(priority)) {
-      console.error("Priority must be one of: None, Low, Medium or High.");
+    if (priority > 3 || priority < 0) {
+      console.error("Priority must be a number between 0 and 3.");
       return;
     } else {
       this.priority = priority;

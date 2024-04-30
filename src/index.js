@@ -13,6 +13,7 @@ import FooterView from "./views/FooterView";
 import AppController from "./controllers/AppController";
 import MenuController from "./controllers/MenuController";
 import FooterController from "./controllers/FooterController";
+import AddView from "./views/AddView";
 
 const menuModel = new MenuModel();
 const appModel = new AppModel();
@@ -40,3 +41,7 @@ const footerController = new FooterController(
   appModel,
   appView,
 );
+
+// document.getElementById("docRoot");
+// const addView = new AddView();
+// docRoot.appendChild(addView.render());

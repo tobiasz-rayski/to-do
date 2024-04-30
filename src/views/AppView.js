@@ -1,5 +1,6 @@
 import AddProjectModal from "../components/AddProjectModal";
 import ListProjectsModal from "../components/ListProjectsModal";
+import AddView from "./AddView";
 
 export default class AppView {
   constructor() {
@@ -7,6 +8,7 @@ export default class AppView {
     this.docRoot.id = "docRoot";
     this.listProjectsModal = new ListProjectsModal();
     this.addProjectModal = new AddProjectModal();
+    this.addTaskModal = new AddView();
     this.modals = this.getModals();
   }
 
@@ -27,7 +29,7 @@ export default class AppView {
   }
 
   getModals() {
-    return [this.listProjectsModal, this.addProjectModal];
+    return [this.listProjectsModal, this.addProjectModal, this.addTaskModal];
   }
 
   hideModals() {

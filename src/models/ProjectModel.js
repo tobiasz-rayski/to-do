@@ -1,9 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
+import TaskModel from "./TaskModel";
 
 export default class ProjectModel {
   constructor(name) {
     this.setId();
     this.setName(name);
+    this.tasks = [];
   }
 
   setId() {
@@ -27,5 +29,11 @@ export default class ProjectModel {
 
   getName() {
     return this.name;
+  }
+
+  addNewTask(task) {
+    const newTask = new TaskModel();
+    this.tasks.push(task);
+    return newTask;
   }
 }

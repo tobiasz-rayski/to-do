@@ -14,6 +14,7 @@ export default class FooterController {
     this.footerView.addProjectIcon.onClick((e) =>
       this.handleAddProjectOnClick(e),
     );
+    this.footerView.addTaskIcon.onClick((e) => this.handleAddNewTaskOnClick(e));
   }
 
   handleListProjectsOnClick(e) {
@@ -33,13 +34,28 @@ export default class FooterController {
     const modal = this.appView.addProjectModal;
 
     if (modal.isActive) {
+      console.log(modal.isActive);
+      modal.toggleState();
+      modal.update();
+    } else {
+      console.log(modal.isActive);
+      this.appView.hideModals();
+      modal.toggleState();
+      modal.update();
+      modal.input.focus();
+    }
+  }
+
+  handleAddNewTaskOnClick(e) {
+    const modal = this.appView.addTaskModal;
+
+    if (modal.isActive) {
       modal.toggleState();
       modal.update();
     } else {
       this.appView.hideModals();
       modal.toggleState();
       modal.update();
-      modal.input.focus();
     }
   }
 }

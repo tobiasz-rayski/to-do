@@ -39,4 +39,8 @@ export default class Modal {
   onClick(handler) {
     this.modal.addEventListener("click", handler);
   }
+
+  render() {
+    return this.modal;
+  }
 }

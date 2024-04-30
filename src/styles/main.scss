@@ -54,6 +54,8 @@ body {
 
   section.modal {
     position: absolute;
+    padding: 0 1rem;
+    border-radius: 12px 12px 0 0;
     z-index: 100;
     display: flex;
     flex-direction: column;
@@ -62,6 +64,22 @@ body {
     bottom: $footer-height;
     box-shadow: $shadow-01;
     background-color: $white;
+    overflow: hidden;
+
+    form {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      input {
+        flex: 2;
+      }
+
+      select {
+        align-self: center;
+        flex: 1;
+      }
+    }
 
     input,
     input:focus-visible {
@@ -70,7 +88,6 @@ body {
       outline: none;
       border: none;
       height: 48px;
-      padding: 1rem;
       font-size: 1rem;
       font-weight: 500;
     }
@@ -83,8 +100,8 @@ body {
         background-color: $white;
         display: flex;
         align-items: center;
-        padding: 1rem;
-        border: solid 1px $grey-95;
+        // padding: 1rem;
+        // border: solid 1px $grey-95;
         cursor: pointer;
       }
     }
