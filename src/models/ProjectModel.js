@@ -36,4 +36,8 @@ export default class ProjectModel {
     this.tasks.push(newTask);
     return newTask;
   }
+
+  getTasks() {
+    return this.tasks;
+  }
 }

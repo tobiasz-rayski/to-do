@@ -19,7 +19,10 @@ export default class AppController {
   init() {
     this.appView.appendRoot();
     this.appView.append(this.menuView.render());
-    this.appView.append(this.projectView.render());
+
+    const activeProject = this.appModel.getActiveProject();
+    const projectTasks = activeProject.getTasks();
+    this.appView.append(this.projectView.render(projectTasks));
     this.appView.append(this.footerView.render());
 
     const projects = this.appModel.getProjects();
@@ -86,6 +89,8 @@ export default class AppController {
     const taskNameValue = this.appView.addTaskModal.taskName.value;
     const taskPriorityValue = this.appView.addTaskModal.taskPriority.value;
     const newTask = activeProject.addNewTask(taskNameValue, taskPriorityValue);
+    const projectTasks = activeProject.getTasks();
     this.appView.hideModals();
+    this.projectView.render(projectTasks);
   }
 }

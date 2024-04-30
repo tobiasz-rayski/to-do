@@ -50,6 +50,26 @@ body {
     position: relative;
     z-index: 2;
     background-color: $grey-95;
+    padding: 1rem;
+
+    .task {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 4rem;
+      padding: 1rem;
+      box-shadow: $shadow-01;
+      background-color: $white;
+
+      header {
+        flex: 3;
+      }
+
+      span {
+        flex: 1;
+      }
+    }
   }
 
   section.modal {
