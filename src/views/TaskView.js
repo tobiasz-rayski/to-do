@@ -8,15 +8,19 @@ export default class TaskView {
     this.taskIsDone = document.createElement("input");
     this.taskIsDone.id = "check";
     this.taskIsDone.type = "checkbox";
+    this.taskRemove = document.createElement("button");
+    this.taskRemove.id = "taskRemove";
+    this.taskRemove.classList.add("button");
   }
 
-  render(taskName, taskPriority) {
+  render(taskName, taskPriority, id) {
     this.updateTaskName(taskName);
     this.updateTaskPriority(taskPriority);
     this.task.appendChild(this.header);
     this.task.appendChild(this.taskPriority);
     this.task.appendChild(this.taskIsDone);
     this.header.appendChild(this.taskName);
+    this.task.dataset.id = id;
     return this.task;
   }
 

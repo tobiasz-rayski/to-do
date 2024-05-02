@@ -40,6 +40,10 @@ export default class TaskModel {
     }
   }
 
+  getPriority() {
+    return this.priority;
+  }
+
   toggleStatus() {
     this.isDone = !this.isDone;
   }

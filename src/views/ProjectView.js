@@ -1,3 +1,5 @@
+import TaskView from "./TaskView";
+
 export default class ProjectView {
   constructor() {
     this.main = document.createElement("main");
@@ -10,13 +12,11 @@ export default class ProjectView {
     }
   }
 
-  render(tasks) {
-    this.clear();
-    tasks.forEach((task) => {
-      this.main.appendChild(
-        new TaskView().render(task.taskName, task.taskPriority),
-      );
-    });
+  append(element) {
+    this.main.appendChild(element);
+  }
+
+  render() {
     return this.main;
   }
 }

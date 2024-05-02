@@ -1,3 +1,5 @@
+import TaskView from "../views/TaskView";
+
 export default class AppController {
   constructor(
     appModel,
@@ -85,12 +87,26 @@ export default class AppController {
 
   handleAddNewTaskOnSubmit(e) {
     e.preventDefault();
-    const activeProject = this.appModel.getActiveProject();
     const taskNameValue = this.appView.addTaskModal.taskName.value;
     const taskPriorityValue = this.appView.addTaskModal.taskPriority.value;
+
+    const activeProject = this.appModel.getActiveProject();
     const newTask = activeProject.addNewTask(taskNameValue, taskPriorityValue);
+
+    this.projectView.clear();
+
     const projectTasks = activeProject.getTasks();
+    projectTasks.forEach((task) => {
+      const taskName = task.getName();
+      const taskPriority = task.getPriority();
+      const taskId = task.getId();
+
+      const newTaskView = new TaskView();
+      this.projectView.append(
+        newTaskView.render(taskName, taskPriority, taskId),
+      );
+    });
+
     this.appView.hideModals();
-    this.projectView.render(projectTasks);
   }
 }
