@@ -82,6 +82,32 @@ export default class AppController {
       this.appModel.setActiveProject(e.target.dataset.id);
       this.menuController.updateActiveProject();
       this.appView.hideModals();
+      this.projectView.clear();
+
+      const activeProject = this.appModel.getActiveProject();
+      const projectTasks = activeProject.getTasks();
+      projectTasks.forEach((task) => {
+        const taskName = task.getName();
+        const taskPriority = task.getPriority();
+        const taskId = task.getId();
+
+        const newTaskView = new TaskView();
+        newTaskView.taskRemoveOnClick((e) => this.handleTaskRemoveOnClick(e));
+        this.projectView.append(
+          newTaskView.render(taskName, taskPriority, taskId),
+        );
+      });
+    }
+  }
+
+  handleTaskRemoveOnClick(e) {
+    const isTaskRemoveButton = this.projectView.isTaskRemoveButton(e.target);
+    if (isTaskRemoveButton) {
+      const taskEl = e.target.closest("article.task");
+      const taskId = this.projectView.getElementId(taskEl);
+      this.projectView.removeTaskElement(taskId);
+      const activeProject = this.appModel.getActiveProject();
+      activeProject.removeTask(taskId);
     }
   }
 
@@ -102,6 +128,7 @@ export default class AppController {
       const taskId = task.getId();
 
       const newTaskView = new TaskView();
+      newTaskView.taskRemoveOnClick((e) => this.handleTaskRemoveOnClick(e));
       this.projectView.append(
         newTaskView.render(taskName, taskPriority, taskId),
       );

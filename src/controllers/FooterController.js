@@ -34,11 +34,9 @@ export default class FooterController {
     const modal = this.appView.addProjectModal;
 
     if (modal.isActive) {
-      console.log(modal.isActive);
       modal.toggleState();
       modal.update();
     } else {
-      console.log(modal.isActive);
       this.appView.hideModals();
       modal.toggleState();
       modal.update();
@@ -56,6 +54,7 @@ export default class FooterController {
       this.appView.hideModals();
       modal.toggleState();
       modal.update();
+      modal.taskName.focus();
     }
   }
 }

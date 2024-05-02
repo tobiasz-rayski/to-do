@@ -34,7 +34,18 @@ export default class ProjectModel {
   addNewTask(name, priority) {
     const newTask = new TaskModel(name, priority);
     this.tasks.push(newTask);
+    console.log(this.tasks);
     return newTask;
+  }
+
+  removeTask(id) {
+    const taskIndex = this.tasks.findIndex((task) => task.id === id);
+    if (taskIndex !== -1) {
+      this.tasks.splice(taskIndex, 1);
+      console.log(this.tasks);
+    } else {
+      return;
+    }
   }
 
   getTasks() {

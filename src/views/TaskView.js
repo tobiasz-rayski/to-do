@@ -9,8 +9,8 @@ export default class TaskView {
     this.taskIsDone.id = "check";
     this.taskIsDone.type = "checkbox";
     this.taskRemove = document.createElement("button");
-    this.taskRemove.id = "taskRemove";
-    this.taskRemove.classList.add("button");
+    this.taskRemove.classList.add("button", "taskRemove");
+    this.taskRemove.textContent = "✖";
   }
 
   render(taskName, taskPriority, id) {
@@ -19,6 +19,7 @@ export default class TaskView {
     this.task.appendChild(this.header);
     this.task.appendChild(this.taskPriority);
     this.task.appendChild(this.taskIsDone);
+    this.task.appendChild(this.taskRemove);
     this.header.appendChild(this.taskName);
     this.task.dataset.id = id;
     return this.task;
@@ -31,5 +32,9 @@ export default class TaskView {
   updateTaskPriority(taskPriority) {
     const level = ["None", "Low", "Medium", "High"];
     this.taskPriority.textContent = level[taskPriority];
+  }
+
+  taskRemoveOnClick(handler) {
+    this.taskRemove.addEventListener("click", handler);
   }
 }
